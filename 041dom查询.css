@@ -1,0 +1,52 @@
+p {
+    color: #333333;
+    margin: 0.3125rem;
+}
+
+ul {
+    list-style-type: none
+}
+
+li {
+    color: #666666;
+    background-color: #f2f2f2;
+    border: 0.0625rem solid #d4d4d4;
+    border-radius: 0.3125rem;
+    float: left;
+    margin: 0.3125rem;
+    padding: 0.3125rem;
+}
+
+input {
+    margin: 0.3125rem;
+}
+
+button {
+    width: 18.75rem;
+    margin: 0.3125rem;
+    padding: 0.3125rem;
+    color: #333333;
+    border-radius: 0.3125rem;
+    background-color: #f2f2f2;
+    border: 0.0625rem solid #d4d4d4;
+}
+
+#content {
+    width: 62.5rem;
+    margin: 3.125rem auto;
+}
+
+#btnlist {
+    float: left;
+}
+
+#formlist {
+    float: left;
+}
+
+.inner {
+    border: 0.0625rem solid #d4d4d4;
+    margin: 0.3125rem;
+    border-radius: 0.625rem;
+    width: 31.25rem;
+}

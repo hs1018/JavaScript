@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            var body = document.body;
+            console.log(body);
+
+            var html = document.documentElement;
+            console.log(html);
+
+            var all = document.all;
+            console.log(all);
+
+            var box1 = document.getElementsByClassName("box1");
+            console.log(box1);
+
+            var divs = document.getElementsByTagName("div");
+            console.log(divs);
+
+            var div = document.querySelector(".box1 div");
+            console.log(div);
+
+            var divv = document.querySelectorAll(".box1 div");
+            console.log(divv);
+        };
+    </script>
+</head>
+
+<body>
+
+    <div class="box1">
+        <div>woshi...</div>
+        <div>woshi</div>
+        <div>woshi</div>
+    </div>
+
+    <div></div>
+
+</body>
+
+</html>

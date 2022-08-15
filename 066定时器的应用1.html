@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+
+            position: absolute;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+
+            var box1 = document.getElementById("box1");
+            var btn = document.getElementById("btn");
+
+            var time;
+
+            btn.onclick = function () {
+
+                clearInterval(time);
+
+                time = setInterval(function () {
+
+                    var style = getComputedStyle(box1, null);
+                    var old = parseInt(style.left);
+                    var news = old + 39;
+
+                    if (news > 800) {
+                        news = 800;
+                    }
+
+                    box1.style.left = news + "px";
+                }, 1000);
+
+                if (box1.style.left >= 800) {
+                    clearInterval(time);
+                }
+
+            };
+
+            //     var time = setInterval(function () {
+            //         box1.style.left = box1.offsetLeft + 10 + "px";
+            //     }, 1000);
+
+            //     clearTimeout(time);
+            // };
+
+        };
+    </script>
+</head>
+
+<body>
+    <button id="btn">点击按钮以后box1向右移动</button>
+    <br>
+    <br>
+    <br>
+    <div id="box1"></div>
+</body>
+
+</html>

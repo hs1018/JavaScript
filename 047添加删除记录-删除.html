@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        #content {
+            width: 31.25rem;
+            margin: 3.125rem auto;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            var a = document.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                a[i].onclick = function () {
+                    var tr = this.parentNode.parentNode;
+                    var name = tr.getElementsByTagName("td")[0].innerHTML;
+                    var shanchu = confirm("是否删除" + name + "?");
+                    if (shanchu) {
+                        tr.parentNode.removeChild(tr);
+                    }
+                    return false;
+                };
+            }
+
+
+        };
+    </script>
+
+</head>
+
+<body>
+    <div id="content">
+        <table border="1px" id="employeeTable">
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>salary</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td>小明</td>
+                <td>458609443@qq.com</td>
+                <td>1000</td>
+                <td><a href="deleteEmp?id=001">delete</a></td>
+            </tr>
+            <tr>
+                <td>小王</td>
+                <td>12345678@qq.com</td>
+                <td>2000</td>
+                <td><a href="deleteEmp?id=002">delete</a></td>
+            </tr>
+            <tr>
+                <td>小红</td>
+                <td>87654321@qq.com</td>
+                <td>5000</td>
+                <td><a href="deleteEmp?id=003">delete</a></td>
+            </tr>
+        </table>
+        <h4>添加新员工</h4>
+        <table>
+            <tr>
+                <td class="word">name:</td>
+                <td class="inp">
+                    <input type="text" name="empName" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="word">email:</td>
+                <td class="inp">
+                    <input type="text" name="email" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="word">salary:</td>
+                <td class="inp">
+                    <input type="text" name="salary" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="addEmpbutton">submit</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

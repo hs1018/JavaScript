@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age
+        };
+
+        var per1 = new Person("孙悟空", 18);
+        var per2 = new Person("猪八戒", 28);
+        var per3 = new Person("红孩儿", 8);
+        var per4 = new Person("唐僧", 30);
+
+        var perArr = [per1, per2, per3, per4];
+
+        function adult(arr) {
+
+            var newarr = [];
+
+            for (i = 0; i < perArr.length; i++) {
+                var p = perArr[i];
+
+                if (p.age >= 18) {
+                    newarr.push(p)
+                }
+            }
+
+            return newarr;
+        }
+
+        var result = adult(perArr);
+
+        console.log(result);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

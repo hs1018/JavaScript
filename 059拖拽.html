@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+
+            position: absolute;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+
+            var box1 = document.getElementById("box1");
+            box1.onmousedown = function (even) {
+
+                var ol = even.clientX - box1.offsetLeft;
+                var ot = even.clientY - box1.offsetTop;
+
+                document.onmousemove = function (even) {
+                    var left = even.clientX;
+                    var top = even.clientY;
+                    box1.style.left = left -ol + "px";
+                    box1.style.top = top -ot + "px";
+                };
+
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+
+                return false;
+            };
+
+        };
+    </script>
+</head>
+
+<body>
+    <p>哈哈哈哈哈</p>
+    <div id="box1"></div>
+</body>
+
+</html>

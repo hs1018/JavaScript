@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+
+            var checkall = document.getElementById("checkall");
+            checkall.onclick = function () {
+                checkallbox.checked = true;
+                var item = document.getElementsByName("item");
+                for (var i = 0; i < item.length; i++) {
+                    item[i].checked = true;
+                }
+            };
+
+            var checkno = document.getElementById("checkno");
+            checkno.onclick = function () {
+                checkallbox.checked = false;
+                var item = document.getElementsByName("item");
+                for (var i = 0; i < item.length; i++) {
+                    item[i].checked = false;
+                }
+            };
+
+            var checkrev = document.getElementById("checkrev");
+            checkrev.onclick = function () {
+                var item = document.getElementsByName("item");
+                for (var i = 0; i < item.length; i++) {
+                    // if (item[i].checked) {
+                    //     item[i].checked = false;
+                    // } else {
+                    //     item[i].checked = true;
+                    // }
+                    item[i].checked = !item[i].checked;
+                }
+
+                checkallbox.checked = true;
+
+                for (j = 0; j < item.length; j++) {
+                    if (!item[j].checked) {
+                        checkallbox.checked = false;
+                        break;
+                    }
+                }
+            };
+
+        var submit = document.getElementById("submit");
+        submit.onclick = function () {
+            var item = document.getElementsByName("item");
+            for (i = 0; i < item.length; i++) {
+                if (item[i].checked) {
+                    alert(item[i].value);
+                }
+            }
+        };
+
+        var checkallbox = document.getElementById("checkallbox");
+        checkallbox.onclick = function () {
+            var item = document.getElementsByName("item");
+            for (i = 0; i < item.length; i++) {
+                // if (checkallbox.checked) {
+                //     item[i].checked = true;
+                // } else {
+                //     item[i].checked = false;
+
+                // }
+                // item[i].checked = checkallbox.checked;
+                item[i].checked = this.checked;
+            }
+        };
+
+        var item = document.getElementsByName("item");
+        for (i = 0; i < item.length; i++) {
+            item[i].onclick = function () {
+
+                checkallbox.checked = true;
+
+                for (j = 0; j < item.length; j++) {
+                    if (!item[j].checked) {
+                        checkallbox.checked = false;
+                        break;
+                    }
+                }
+            };
+        }
+
+
+        };
+    </script>
+</head>
+
+<body>
+
+    你爱好的运动是？
+    <input type="checkbox" id="checkallbox">全选/全不选<br />
+    <input type="checkbox" name="item" value="篮球">篮球
+    <input type="checkbox" name="item" value="足球">足球
+    <input type="checkbox" name="item" value="乒乓球">乒乓球
+    <input type="checkbox" name="item" value="羽毛球">羽毛球<br />
+    <button id="checkall">全选</button>
+    <button id="checkno">不选</button>
+    <button id="checkrev">反选</button>
+    <button id="submit">提交</button>
+
+
+</body>
+
+</html>

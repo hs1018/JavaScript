@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./042图片切换练习.css">
+
+    <script>
+
+        window.onload = function () {
+
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+
+            var img = document.getElementsByTagName("img")[0];
+
+            var imgArr = ["./img/10.webp", "./img/11.webp", "./img/12.webp"];
+            var index = 0;
+
+            var info = document.getElementById("info");
+            info.innerHTML = "一共有" + imgArr.length + "张图片，" + "这是第" + (index + 1) + "张。"
+
+            prev.onclick = function () {
+                index--;
+                if (index < 0) {
+                    index = imgArr.length - 1;
+                }
+                img.src = imgArr[index];
+
+                info.innerHTML = "一共有" + imgArr.length + "张图片，" + "这是第" + (index + 1) + "张。"
+            }
+            next.onclick = function () {
+                index++;
+                if (index > imgArr.length - 1) {
+                    index = 0;
+                }
+                img.src = imgArr[index];
+
+                info.innerHTML = "一共有"+imgArr.length+"张图片，"+"这是第"+ (index+1)+"张。"
+            }
+
+        };
+    </script>
+
+</head>
+
+<body>
+    <div class="outer">
+        <p id="info"></p>
+        <img src="./img/10.webp" alt="冰棍"><br />
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+
+</html>

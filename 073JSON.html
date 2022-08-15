@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // js对象只有js自己认识
+        // json就是特殊格式的字符串，可以被任意语言所识别，在开发中用于数据的交互
+        // JavaScript Object Notation
+        // json分类：1，对象{} 2，数组[]
+        // 允许的值：1字符串 2数值 3布尔值 4null 5对象 6数组
+        var json = '{"name":"test","age":18,"gender":"男"}';
+        var arr = '[1,2,3,"hello",true]';
+
+        // 将json转换为js对象
+        // JSON工具类
+        console.log(JSON)
+        // JSON.parse()将JSON字符串转换为js对象并返回
+
+        var a = JSON.parse(json)
+
+        console.log(a)
+        console.log(a.gender)
+
+        // JSON.stringify()将js对象转化为JSON
+        var obj = { name: "哈哈", age: 18, gender: "男" };
+
+        var str = JSON.stringify(obj)
+        
+        console.log(str)
+
+        // eval()可以执行一段字符串形式的代码并返回结果
+        // 如果eval() 执行的字符串含有{},它会将{}当成代码块
+        // 如果不希望当成代码块解析，需要在字符串前后加()
+        var json = '{"name":"test","age":18,"gender":"男"}';
+        var str2 = "console.log('hello')";
+        eval(str2)
+        console.log(eval("(" + json + ")"))
+	// eval()性能较差，并且有安全隐患，在开发中尽量不要使用eval()
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

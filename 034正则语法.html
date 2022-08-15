@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var reg = /a/i;
+        console.log(reg.test("ABCD"));
+
+        var reg = /a|b|c/i;
+        console.log(reg.test("ABCD"));
+
+        var reg = /[abc]/i;
+        console.log(reg.test("ABCD"));
+
+        var reg = /[^abc]/i;
+        console.log(reg.test("ABCD"));
+
+        var reg = /[a-z]/i;
+        console.log(reg.test("ABCD"));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
